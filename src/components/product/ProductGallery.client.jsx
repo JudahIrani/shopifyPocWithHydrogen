@@ -19,7 +19,8 @@ export function ProductGallery({media, className}) {
         .filter((med) => {
           return (
             med.alt.indexOf(`sku-${selectedVariant.sku}`) > -1 ||
-            med.alt.indexOf('sku-all') > -1
+            med.alt.indexOf('sku-all') > -1 ||
+            med.alt.indexOf('large') > -1
           );
           // med.alt.indexOf('sku-all') > -1
         })
