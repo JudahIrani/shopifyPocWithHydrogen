@@ -197,3 +197,29 @@ const PRODUCT_QUERY = gql`
     }
   }
 `;
+
+const CONTENTFUL_QUERY = gql`
+  query ($handle: String!) {
+    # add your query
+    productCollection(where: {handle: $handle}) {
+      items {
+        productName
+        productDescription
+        relatedProducts
+        tags
+      }
+    }
+  }
+`;
+
+// ...
+const {data: contentfulData} = useContentfulQuery({
+  query: CONTENTFUL_QUERY,
+  variables: {
+    handle,
+  },
+});
+
+// Print your Contentful data
+console.dir(contentfulData, {depth: 5});
+// ...
