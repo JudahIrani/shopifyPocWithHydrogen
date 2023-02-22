@@ -1,11 +1,20 @@
-import {defineConfig} from '@shopify/hydrogen/config';
+import {defineConfig, CookieSessionStorage} from '@shopify/hydrogen/config';
 
 export default defineConfig({
   shopify: {
-    storeDomain: 'sfcctopluspocstaging.myshopify.com',
-    storefrontToken: 'e26b47953456fda0be37f372d9c864ef',
+    defaultCountryCode: 'US',
+    defaultLanguageCode: 'EN',
+    storeDomain: Oxygen.env.PUBLIC_STORE_DOMAIN,
+    storefrontToken: Oxygen.env.PUBLIC_STOREFRONT_API_TOKEN,
+    privateStorefrontToken: Oxygen.env.PRIVATE_STOREFRONT_API_TOKEN,
     storefrontApiVersion: '2022-07',
-    CONTENTFUL_SPACE_ID:'0j62opvgstnf',
-    CONTENTFUL_ACCESS_TOKEN:'iQu3gge6MzjVpJxZ8RiI1CacUTgEh3XS7YNN7OuKteo'
+    storefrontId: Oxygen.env.PUBLIC_STOREFRONT_ID,
   },
+  session: CookieSessionStorage('__session', {
+    path: '/',
+    httpOnly: true,
+    secure: import.meta.env.PROD,
+    sameSite: 'Strict',
+    maxAge: 60 * 60 * 24 * 30,
+  }),
 });
