@@ -59,7 +59,7 @@ function HomepageContent() {
   return (
     <>
       {primaryHero && (
-        <Hero {...primaryHero} height="full" top loading="eager" />
+        <Hero {...primaryHero} title="Merkle B2b Demo" height="full" top loading="eager" />
       )}
       <ProductSwimlane
         data={featuredProducts.nodes}

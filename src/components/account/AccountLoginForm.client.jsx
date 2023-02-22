@@ -104,7 +104,7 @@ export function AccountLoginForm({shopName}) {
 
 export async function callLoginApi({email, password}) {
   try {
-    const res = await fetch(`/account/login`, {
+    const res = await fetch(`https://shopify.com/69456429376/account`, {
       method: 'POST',
       headers: {
         Accept: 'application/json',
@@ -118,6 +118,7 @@ export async function callLoginApi({email, password}) {
       return res.json();
     }
   } catch (error) {
+    console.log(error);
     return {
       error: error.toString(),
     };
