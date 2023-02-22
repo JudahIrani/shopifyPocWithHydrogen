@@ -21,6 +21,7 @@ import {
   Section,
   Text,
 } from '~/components';
+import {useContentfulQuery} from "../../api/useContentfulQuery";
 
 export default function Product() {
   const {handle} = useRouteParams();
