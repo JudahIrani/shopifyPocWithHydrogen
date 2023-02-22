@@ -1,7 +1,7 @@
 import {useQuery} from '@shopify/hydrogen';
 
-const SPACE_ID = '0j62opvgstnf';
-const ACCESS_TOKEN = 'iQu3gge6MzjVpJxZ8RiI1CacUTgEh3XS7YNN7OuKteo';
+const SPACE_ID = '17iy4f89iof1';
+const ACCESS_TOKEN = '7i731nz096ILdYN3a1CPgSm2zS2b7Oz99jDmxHX_fQg';
 const CONTENTFUL_URL = `https://graphql.contentful.com/content/v1/spaces/${SPACE_ID}`;
 
 export const useContentfulQuery = ({query, variables, key = []}) => {
